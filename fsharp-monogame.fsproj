@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>fsharp_monogame</RootNamespace>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Extensions/Vector2.fs" />
+    <Compile Include="GameUtil.fs" />
+    <Compile Include="Input.fs" />
+    <Compile Include="Sprite.fs" />
+    <Compile Include="Player.fs" />
+    <Compile Include="FSGame.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="Content/Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder" Version="3.7.0.9" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL.Core" Version="3.7.0.7" />
+    <PackageReference Include="NSubsys" Version="0.7.0-build20180604-0047" />
+  </ItemGroup>
+</Project>
