@@ -10,6 +10,7 @@
     <Compile Include="Input.fs" />
     <Compile Include="Sprite.fs" />
     <Compile Include="Player.fs" />
+    <Compile Include="GameExit.fs" />
     <Compile Include="FSGame.fs" />
     <Compile Include="Program.fs" />
     <None Include="Content/Content.mgcb" />
