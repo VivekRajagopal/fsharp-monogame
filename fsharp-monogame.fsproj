@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>fsharp_monogame</RootNamespace>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Winexe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
@@ -10,9 +10,11 @@
     <Compile Include="Input.fs" />
     <Compile Include="Sprite.fs" />
     <Compile Include="Rendering.fs" />
+    <Compile Include="AppState.fs" />
     <Compile Include="Player.fs" />
     <Compile Include="Ball.fs" />
     <Compile Include="Collision.fs" />
+    <Compile Include="Scoring.fs" />
     <Compile Include="GameExit.fs" />
     <Compile Include="FSGame.fs" />
     <Compile Include="Program.fs" />

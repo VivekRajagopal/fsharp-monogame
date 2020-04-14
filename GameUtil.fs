@@ -9,8 +9,6 @@ module GameUtil =
   }
 
   let getFrameData (game: Game) gameTime =
-    {
-      ViewportWidth = game.GraphicsDevice.Viewport.Width
+    { ViewportWidth = game.GraphicsDevice.Viewport.Width
       ViewportHeight = game.GraphicsDevice.Viewport.Height
-      GameTime = gameTime
-    }
+      GameTime = gameTime }

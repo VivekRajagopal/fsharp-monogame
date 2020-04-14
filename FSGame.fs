@@ -18,6 +18,8 @@ type FSGame () as this =
     let player = Player.Create()
     let ball = Ball.Create()
 
+    let appState = ref AppState.create
+
     override this.Initialize() =
         do
             this.Content.RootDirectory <- "Content"
@@ -31,18 +33,22 @@ type FSGame () as this =
         base.Initialize()
 
     override this.LoadContent() =
-        Player.LoadContent player this.Content "paddle"
-        Ball.LoadContent ball this.Content "ball"
+        Player.LoadContent player this.Content
+        Ball.LoadContent ball this.Content
+        Scoring.LoadContent this.Content
 
     override this.Update (gameTime) =
         let frameData = GameUtil.getFrameData this gameTime
+        appState := { !appState with FrameData = frameData }
 
         GameExit.Update this frameData
 
         Player.Update player frameData
-        Ball.Update ball frameData
+        Ball.Update ball appState
 
         Collision.handlePlayerWithBall player ball
+
+        appState := Scoring.update !appState
 
         base.Update(gameTime)
 
@@ -53,6 +59,7 @@ type FSGame () as this =
 
         Player.Draw player spriteBatch gameTime
         Ball.Draw ball spriteBatch gameTime
+        Scoring.draw spriteBatch !appState
 
         spriteBatch.End()
         base.Draw(gameTime)

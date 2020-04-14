@@ -13,12 +13,12 @@ module Player =
 
   let Create () = Player sprite
 
-  let LoadContent (Player sprite) (content: ContentManager) spriteName =
+  let LoadContent (Player sprite) (content: ContentManager) =
     sprite := {
       position = Vector2(150.f, 0.f)
       direction = Vector2.UnitY
       speed = 400.f
-      texture = content.Load spriteName
+      texture = content.Load "paddle"
       size = Point(64, 16)
       offset = Point(0, 0) }
 
